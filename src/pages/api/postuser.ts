@@ -1,9 +1,10 @@
 import { PrismaClient } from "@prisma/client";
 import { NextApiRequest,NextApiResponse } from "next";
-
+import { Middleware } from "./middleware";
 
 const prisma = new PrismaClient();
 export default async function handler(req:NextApiRequest, res: NextApiResponse){
+ Middleware(req,res)
 if (req.method === 'POST'){
    const {username,password} = req.body
    const user = await prisma.user.create({

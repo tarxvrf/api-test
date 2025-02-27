@@ -1,10 +1,12 @@
-
-
+import { Middleware } from "./middleware";
 import { PrismaClient } from "@prisma/client";
 import { NextApiRequest,NextApiResponse } from "next";
 
 const prisma = new PrismaClient()
+
 export default async function handler(req:NextApiRequest, res: NextApiResponse){
+  Middleware(req,res)   
+
 if (req.method === 'GET'){
    const alluser= await prisma.user.findMany()
 

@@ -1,8 +1,9 @@
 import React from 'react'
+import Sidebar from './sidebar'
 
 function index() {
   return (
-    <div>hallo ini haalaman index</div>
+    <div><Sidebar/></div>
   )
 }
 

@@ -1,12 +1,11 @@
-
-
 import { PrismaClient } from "@prisma/client";
 import { NextApiRequest,NextApiResponse } from "next";
+import { Middleware } from "../middleware";
 
 
 const prisma = new PrismaClient()
 export default async function handler(req:NextApiRequest, res: NextApiResponse){
-
+ Middleware(req,res)
 if (req.method === 'DELETE'){
     const {id} = req.query   
     const data = await prisma.user.delete({where:{

@@ -10,12 +10,13 @@ if (req.method === 'PATCH'){
     const {id} = req.query
     const {nama,harga,stok}= req.body
     const data = await prisma.stokproduk.update({where:{
-      id:parseInt(id as string )
+      id:parseInt(id as any )
     },
     data:{
         nama:nama as string,
         harga:parseFloat(harga),
-        stok:parseInt(stok) 
+        stok:parseInt(stok),
+        
     }
     }
     )

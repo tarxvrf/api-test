@@ -3,7 +3,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 
 // Inisialisasi middleware CORS
 const cors = Cors({
-  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Metode yang diizinkan
+  methods: ['GET', 'POST', 'PUT', 'DELETE','PATCH'], // Metode yang diizinkan
   origin: ['http://localhost:3001','http://localhost:3000'], // Izinkan hanya akses dari localhost:3001
   credentials: true, // Untuk mengizinkan pengiriman cookies dan credentials
 });

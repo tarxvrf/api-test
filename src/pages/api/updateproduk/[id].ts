@@ -1,5 +1,3 @@
-
-
 import { PrismaClient } from "@prisma/client";
 import { NextApiRequest,NextApiResponse } from "next";
 import { Middleware } from "../middleware";
@@ -10,13 +8,14 @@ export default async function handler(req:NextApiRequest, res: NextApiResponse){
 Middleware(req,res)
 if (req.method === 'PATCH'){
     const {id} = req.query
-    const {username,password}= req.body
-    const data = await prisma.user.update({where:{
+    const {nama,harga,stok}= req.body
+    const data = await prisma.stokproduk.update({where:{
       id:parseInt(id as string )
     },
     data:{
-        username:username as string,
-        password:password as string
+        nama:nama as string,
+        harga:parseFloat(harga),
+        stok:parseInt(stok) 
     }
     }
     )

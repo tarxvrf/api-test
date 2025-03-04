@@ -22,9 +22,7 @@ function runCors(req:NextApiRequest, res:NextApiResponse) {
 
 // Middleware untuk API dan Halaman
 export async function Middleware(req: NextApiRequest, res: NextApiResponse) {
-  try {
+
         return await runCors(req, res);
-    } catch (error) {
-        res.status(500).json({ error: 'CORS Error' });
-    }
+   
 }

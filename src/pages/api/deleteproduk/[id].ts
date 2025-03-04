@@ -9,7 +9,7 @@ export default async function handler(req:NextApiRequest, res: NextApiResponse){
 if (req.method === 'DELETE'){
     const {id} = req.query   
     const data = await prisma.stokproduk.delete({where:{
-      id:parseInt(id as any)
+      id:parseInt(id as string)
     } 
     }
     )
